@@ -1,10 +1,9 @@
-# Dependências
+# Dependencies, Build, Ambient Variables, IDEs, ...
 node_modules/
-.idea
-
-# Build
 dist/
-yarn.lock
 
-# Variáveis de ambiente
+yarn.lock
 .env
+
+.idea/
+.vscode/
