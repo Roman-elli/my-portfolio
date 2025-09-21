@@ -1,0 +1,10 @@
+# Dependências
+node_modules/
+.idea
+
+# Build
+dist/
+yarn.lock
+
+# Variáveis de ambiente
+.env
