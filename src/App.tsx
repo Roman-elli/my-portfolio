@@ -1,8 +1,14 @@
+import Header from "./components/header/Header.tsx";
+import { useState } from "react";
+
 function App() {
+  const [insLightMode, setInsLightMode] = useState(true);
+  const toggleMode = () => setInsLightMode(!insLightMode);
+
   return (
-    <>
-      <h1 className="text-20xl font-bold text-blue-500">Hello Tailwind!</h1>
-    </>
+    <div className="w-screen h-screen bg-black">
+      <Header isLightMode={insLightMode} toggleMode={toggleMode} />
+    </div>
   );
 }
 
