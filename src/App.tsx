@@ -6,7 +6,7 @@ function App() {
   const toggleMode = () => setInsLightMode(!insLightMode);
 
   return (
-    <div className="w-screen h-screen bg-black">
+    <div className="w-screen h-screen bg-[#0E0D0D]">
       <Header isLightMode={insLightMode} toggleMode={toggleMode} />
     </div>
   );
