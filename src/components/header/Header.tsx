@@ -14,22 +14,25 @@ function Header({ mode, toggleMode }: HeaderProps) {
         <img
           src={MyLogo}
           alt="My logo"
-          className="w-1/12 hover:w-1/11 transition-all duration-300"
+          className="w-[10%] transition-all duration-900 rounded-full ease-in-out
+          shadow-md shadow-yellow-400
+          hover:shadow-white/40 hover:shadow-xl hover:scale-106
+          "
         />
       </div>
       <div className="w-1/2 flex justify-end items-center gap-[8%] pr-[5%]">
         <div>
           <button
             className="
-              relative group flex items-center px-4 py-3 rounded-xl transition-all duration-400 overflow-hidden
+              relative group flex items-center px-4 py-3 rounded-xl transition-all duration-200 overflow-hidden
               bg-indigo-400
               text-white
-              hover:scale-103 hover:text-black/50
-              active:scale-95
+              hover:scale-103 hover:text-black/50 hover:shadow-indigo-400/70 hover:shadow-2xl
+              shadow-md shadow-black/40
+              active:scale-98
               "
           >
-            <span className="absolute top-[200%] left-0 w-full h-full bg-white rounded-[50%] group-hover:top-0 transition-all ease-in-out duration-800 scale-150 z-0"></span>
-
+            <span className="absolute top-[200%] left-0 w-full h-full bg-indigo-100 rounded-[50%] group-hover:top-0 transition-all ease-in-out duration-900 scale-150 z-0"></span>
             <div className="flex items-center gap-2 z-10">
               <RxDownload size={30} />
               <span>Download CV</span>
@@ -38,7 +41,10 @@ function Header({ mode, toggleMode }: HeaderProps) {
         </div>
         <div>
           <button
-            className="p-[35%] bg-white rounded-full transition-all duration-200 hover:scale-110 hover:text-white hover:bg-indigo-400 active:scale-100"
+            className="p-[35%] rounded-full transition-all duration-400 active:scale-90 border
+            hover:scale-110 hover:text-red-600 hover:shadow-red-500/50 hover:shadow-xl
+            bg-indigo-100 border-black/20
+            "
             onClick={toggleMode}
             disabled={mode === "animating"}
           >
