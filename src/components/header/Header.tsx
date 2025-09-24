@@ -1,6 +1,5 @@
 import { PiMoon, PiSunLight } from "react-icons/pi";
 import { RxDownload } from "react-icons/rx";
-import MyLogo from "./../../../public/my-logo.png";
 
 type HeaderProps = {
   mode: "light" | "dark" | "animating";
@@ -12,9 +11,9 @@ function Header({ mode, toggleMode }: HeaderProps) {
     <div className="flex flex-row w-full h-[14%] fixed">
       <div className="w-1/2 flex items-center pl-[5%]">
         <img
-          src={MyLogo}
+          src={"/my-logo.png"}
           alt="My logo"
-          className="w-[10%] transition-all duration-900 rounded-full ease-in-out
+          className="w-[8%] min-w-15 max-w-17 transition-all duration-900 rounded-full ease-in-out
           shadow-md shadow-yellow-400
           hover:shadow-white/40 hover:shadow-xl hover:scale-106
           "
@@ -24,13 +23,14 @@ function Header({ mode, toggleMode }: HeaderProps) {
         <div>
           <button
             className="
-              relative group flex items-center px-4 py-3 rounded-xl transition-all duration-200 overflow-hidden
+              relative group flex items-center px-4 py-3 rounded-xl transition-all duration-300 overflow-hidden
               bg-indigo-400
               text-white
               hover:scale-103 hover:text-black/50 hover:shadow-indigo-400/70 hover:shadow-2xl
               shadow-md shadow-black/40
               active:scale-98
               "
+            onClick={() => window.open("/my-cv.pdf", "_blank")}
           >
             <span className="absolute top-[200%] left-0 w-full h-full bg-indigo-100 rounded-[50%] group-hover:top-0 transition-all ease-in-out duration-900 scale-150 z-0"></span>
             <div className="flex items-center gap-2 z-10">
