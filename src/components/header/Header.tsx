@@ -2,13 +2,14 @@ import { PiMoon, PiSunLight } from "react-icons/pi";
 import { RxDownload } from "react-icons/rx";
 
 type HeaderProps = {
-  mode: "light" | "dark" | "animating";
+  mode: "light" | "dark";
+  isAnimating: boolean;
   toggleMode: () => void;
 };
 
-function Header({ mode, toggleMode }: HeaderProps) {
+function Header({ mode, isAnimating, toggleMode }: HeaderProps) {
   return (
-    <div className="flex flex-row w-full h-[14%] fixed">
+    <div className="flex flex-row w-full h-[14%] fixed z-10">
       <div className="w-1/2 flex items-center pl-[5%]">
         <img
           src={"/my-logo.png"}
@@ -45,10 +46,11 @@ function Header({ mode, toggleMode }: HeaderProps) {
           <button
             className="p-[35%] rounded-full transition-all duration-400 active:scale-90 border
             hover:scale-110 hover:text-red-600 hover:shadow-red-500/50 hover:shadow-xl
+            disabled:rotate-360 disabled:opacity-30 disabled:hover:shadow-none disabled:hover:scale-100
             bg-indigo-100 border-black/20
             "
             onClick={toggleMode}
-            disabled={mode === "animating"}
+            disabled= {isAnimating}
             data-testid="light-dark-button-id"
           >
             {mode === "light" && (
