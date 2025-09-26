@@ -1,6 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import React from "react";
 import Header from "./Header";
 
 describe("Header component", () => {
@@ -9,7 +8,7 @@ describe("Header component", () => {
     const toggleModeMock = vi.fn();
 
     // Act
-    render(<Header mode="light" toggleMode={toggleModeMock} />);
+    render(<Header mode="light" isAnimating={false} toggleMode={toggleModeMock} />);
 
     // Assert
     expect(screen.getByTestId("logo-image-id")).toBeInTheDocument();
@@ -22,7 +21,7 @@ describe("Header component", () => {
     const toggleModeMock = vi.fn();
 
     // Act
-    render(<Header mode="dark" toggleMode={toggleModeMock} />);
+    render(<Header mode="dark" isAnimating={false} toggleMode={toggleModeMock} />);
     fireEvent.click(screen.getByTestId("light-dark-button-id"));
 
     // Assert
@@ -36,7 +35,7 @@ describe("Header component", () => {
     window.open = openMock;
 
     // Act
-    render(<Header mode="light" toggleMode={toggleModeMock} />);
+    render(<Header mode="light" isAnimating={false} toggleMode={toggleModeMock} />);
     fireEvent.click(screen.getByTestId("download-button-id"));
 
     // Assert
@@ -49,7 +48,7 @@ describe("Header component", () => {
     const toggleModeMock = vi.fn();
 
     // Act
-    render(<Header mode={"light"} toggleMode={toggleModeMock} />);
+    render(<Header mode={"light"} isAnimating={false} toggleMode={toggleModeMock} />);
 
     // Assert
     expect(
@@ -64,7 +63,7 @@ describe("Header component", () => {
     const toggleModeMock = vi.fn();
 
     // Act
-    render(<Header mode={"dark"} toggleMode={toggleModeMock} />);
+    render(<Header mode={"dark"} isAnimating={false} toggleMode={toggleModeMock} />);
 
     // Assert
     expect(
@@ -73,4 +72,15 @@ describe("Header component", () => {
     expect(screen.getByTestId("moon-icon-id")).toBeInTheDocument();
     expect(screen.queryByTestId("sun-icon-id")).not.toBeInTheDocument();
   });
+
+  it("disable light&dark mode button when isAnimating is true", () =>{
+      // Arrange
+      const toggleModeMock = vi.fn();
+
+      // Act
+      render(<Header mode={"dark"} isAnimating={true} toggleMode={toggleModeMock} />);
+
+      // Assert
+      expect(screen.getByTestId("light-dark-button-id")).toBeDisabled();
+  })
 });
