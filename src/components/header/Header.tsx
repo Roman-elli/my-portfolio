@@ -44,9 +44,9 @@ function Header({ mode, isAnimating, toggleMode }: HeaderProps) {
         </div>
         <div>
           <button
-            className="p-[35%] rounded-full transition-all duration-400 active:scale-90 border
+            className="p-[35%] rounded-full transition-all duration-600 border
             hover:scale-110 hover:text-red-600 hover:shadow-red-500/50 hover:shadow-xl
-            disabled:rotate-360 disabled:opacity-30 disabled:hover:shadow-none disabled:hover:scale-100
+            disabled:rotate-360 disabled:opacity-20 disabled:hover:scale-80 disabled:scale-80 disabled:duration-1500
             bg-indigo-100 border-black/20
             "
             onClick={toggleMode}
