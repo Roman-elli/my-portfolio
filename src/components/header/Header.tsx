@@ -17,6 +17,7 @@ function Header({ mode, toggleMode }: HeaderProps) {
           shadow-md shadow-yellow-400
           hover:shadow-white/40 hover:shadow-xl hover:scale-106
           "
+          data-testid="logo-image-id"
         />
       </div>
       <div className="w-1/2 flex justify-end items-center gap-[8%] pr-[5%]">
@@ -31,6 +32,7 @@ function Header({ mode, toggleMode }: HeaderProps) {
               active:scale-98
               "
             onClick={() => window.open("/my-cv.pdf", "_blank")}
+            data-testid="download-button-id"
           >
             <span className="absolute top-[200%] left-0 w-full h-full bg-indigo-100 rounded-[50%] group-hover:top-0 transition-all ease-in-out duration-900 scale-150 z-0"></span>
             <div className="flex items-center gap-2 z-10">
@@ -47,9 +49,12 @@ function Header({ mode, toggleMode }: HeaderProps) {
             "
             onClick={toggleMode}
             disabled={mode === "animating"}
+            data-testid="light-dark-button-id"
           >
-            {mode === "light" && <PiSunLight size={24} />}
-            {mode === "dark" && <PiMoon size={24} />}
+            {mode === "light" && (
+              <PiSunLight data-testid="sun-icon-id" size={24} />
+            )}
+            {mode === "dark" && <PiMoon data-testid="moon-icon-id" size={24} />}
           </button>
         </div>
       </div>
