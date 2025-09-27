@@ -2,8 +2,9 @@
 node_modules/
 dist/
 
-.yarnclean
 .env
+
+.yarnclean
 
 .idea/
 .vscode/
