@@ -1,1 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Imprima&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-space: "Noto Sans", sans-serif;
+  --color-light: #ff8888;
+  --color-dark: #06001d;
+  --animate-scalePulse: scalePulse 5s ease-in-out infinite;
+
+  @keyframes scalePulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.04);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

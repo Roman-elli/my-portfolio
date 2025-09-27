@@ -25,7 +25,7 @@ function Header({ mode, isAnimating, toggleMode }: HeaderProps) {
         <div>
           <button
             className="
-              relative group flex items-center px-4 py-3 rounded-xl transition-all duration-300 overflow-hidden
+              relative group flex items-center px-4 py-3 rounded-xl transition-all duration-700 overflow-hidden
               bg-indigo-400
               text-white
               hover:scale-103 hover:text-black/50 hover:shadow-indigo-400/70 hover:shadow-2xl
@@ -36,7 +36,7 @@ function Header({ mode, isAnimating, toggleMode }: HeaderProps) {
             data-testid="download-button-id"
           >
             <span className="absolute top-[200%] left-0 w-full h-full bg-indigo-100 rounded-[50%] group-hover:top-0 transition-all ease-in-out duration-900 scale-150 z-0"></span>
-            <div className="flex items-center gap-2 z-10">
+            <div className="flex items-center gap-2 z-10 text-nowrap">
               <RxDownload size={30} />
               <span>Download CV</span>
             </div>
@@ -44,19 +44,31 @@ function Header({ mode, isAnimating, toggleMode }: HeaderProps) {
         </div>
         <div>
           <button
-            className="p-[35%] rounded-full transition-all duration-600 border
+            className="p-[35%] rounded-full transition-all duration-900 border
             hover:scale-110 hover:text-red-600 hover:shadow-red-500/50 hover:shadow-xl
             disabled:rotate-360 disabled:opacity-20 disabled:hover:scale-80 disabled:scale-80 disabled:duration-1500
             bg-indigo-100 border-black/20
             "
             onClick={toggleMode}
-            disabled= {isAnimating}
+            disabled={isAnimating}
             data-testid="light-dark-button-id"
           >
-            {mode === "light" && (
-              <PiSunLight data-testid="sun-icon-id" size={24} />
-            )}
-            {mode === "dark" && <PiMoon data-testid="moon-icon-id" size={24} />}
+            <div className="relative w-6 h-6">
+              <PiSunLight
+                data-testid="sun-icon-id"
+                size={24}
+                className={`absolute transition-opacity duration-1000 ${
+                  mode === "light" ? "opacity-100" : "opacity-0"
+                }`}
+              />
+              <PiMoon
+                data-testid="moon-icon-id"
+                size={24}
+                className={`absolute transition-opacity duration-1000 ${
+                  mode === "dark" ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            </div>
           </button>
         </div>
       </div>
