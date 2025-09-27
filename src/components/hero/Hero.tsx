@@ -27,7 +27,7 @@ function Hero({ mode }: BackgroundProps) {
       <div
         className={`font-space duration-3000 ease-linear text-balance
             text-shadow-lg text-[3rem]
-            ${mode === "light" ? "text-[#A87777] text-shadow-black/40" : "text-[#95C1F8] text-shadow-white/60"} 
+            ${mode === "light" ? "text-[#A87777] text-shadow-black/60" : "text-[#95C1F8] text-shadow-white/60"} 
             `}
         data-testid="writer-test-id"
       >
