@@ -13,7 +13,8 @@
     "test:watch": "vitest",
     "format": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,css,scss,md}'",
     "coverage:report": "start coverage/index.html",
-    "open": "vite --open"
+    "open": "vite --open",
+    "clean": "yarn autoclean --force"
   },
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
