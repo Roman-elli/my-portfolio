@@ -3,12 +3,9 @@ type BackgroundProps = {
   mode: "light" | "dark";
 };
 
-function Background({ mode }: BackgroundProps) {
+function Hero({ mode }: BackgroundProps) {
   return (
-    <div
-      className={`flex flex-col items-center justify-center w-full h-full gap-10 pt-[10%] 
-      `}
-    >
+    <div className="flex flex-col items-center justify-center w-full h-full gap-10 pt-[10%] z-10">
       <div className="flex flex-row text-4xl gap-3 font-space">
         <div
           className={`duration-3000 ease-linear text-shadow-lg text-balance
@@ -49,4 +46,4 @@ function Background({ mode }: BackgroundProps) {
     </div>
   );
 }
-export default Background;
+export default Hero;

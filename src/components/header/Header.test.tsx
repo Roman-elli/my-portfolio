@@ -8,7 +8,9 @@ describe("Header component", () => {
     const toggleModeMock = vi.fn();
 
     // Act
-    render(<Header mode="light" isAnimating={false} toggleMode={toggleModeMock} />);
+    render(
+      <Header mode="light" isAnimating={false} toggleMode={toggleModeMock} />,
+    );
 
     // Assert
     expect(screen.getByTestId("logo-image-id")).toBeInTheDocument();
@@ -21,7 +23,9 @@ describe("Header component", () => {
     const toggleModeMock = vi.fn();
 
     // Act
-    render(<Header mode="dark" isAnimating={false} toggleMode={toggleModeMock} />);
+    render(
+      <Header mode="dark" isAnimating={false} toggleMode={toggleModeMock} />,
+    );
     fireEvent.click(screen.getByTestId("light-dark-button-id"));
 
     // Assert
@@ -35,7 +39,9 @@ describe("Header component", () => {
     window.open = openMock;
 
     // Act
-    render(<Header mode="light" isAnimating={false} toggleMode={toggleModeMock} />);
+    render(
+      <Header mode="light" isAnimating={false} toggleMode={toggleModeMock} />,
+    );
     fireEvent.click(screen.getByTestId("download-button-id"));
 
     // Assert
@@ -48,14 +54,16 @@ describe("Header component", () => {
     const toggleModeMock = vi.fn();
 
     // Act
-    render(<Header mode={"light"} isAnimating={false} toggleMode={toggleModeMock} />);
+    render(
+      <Header mode={"light"} isAnimating={false} toggleMode={toggleModeMock} />,
+    );
 
     // Assert
     expect(
       screen.getByTestId("light-dark-button-id").querySelector("svg"),
     ).toBeInTheDocument();
-    expect(screen.getByTestId("sun-icon-id")).toBeInTheDocument();
-    expect(screen.queryByTestId("moon-icon-id")).not.toBeInTheDocument();
+    expect(screen.getByTestId("sun-icon-id")).toHaveClass("opacity-100");
+    expect(screen.getByTestId("moon-icon-id")).toHaveClass("opacity-0");
   });
 
   it("renders moon icon when mode is dark", () => {
@@ -63,24 +71,28 @@ describe("Header component", () => {
     const toggleModeMock = vi.fn();
 
     // Act
-    render(<Header mode={"dark"} isAnimating={false} toggleMode={toggleModeMock} />);
+    render(
+      <Header mode={"dark"} isAnimating={false} toggleMode={toggleModeMock} />,
+    );
 
     // Assert
     expect(
       screen.getByTestId("light-dark-button-id").querySelector("svg"),
     ).toBeInTheDocument();
-    expect(screen.getByTestId("moon-icon-id")).toBeInTheDocument();
-    expect(screen.queryByTestId("sun-icon-id")).not.toBeInTheDocument();
+    expect(screen.getByTestId("moon-icon-id")).toHaveClass("opacity-100");
+    expect(screen.getByTestId("sun-icon-id")).toHaveClass("opacity-0");
   });
 
-  it("disable light&dark mode button when isAnimating is true", () =>{
-      // Arrange
-      const toggleModeMock = vi.fn();
+  it("disable light&dark mode button when isAnimating is true", () => {
+    // Arrange
+    const toggleModeMock = vi.fn();
 
-      // Act
-      render(<Header mode={"dark"} isAnimating={true} toggleMode={toggleModeMock} />);
+    // Act
+    render(
+      <Header mode={"dark"} isAnimating={true} toggleMode={toggleModeMock} />,
+    );
 
-      // Assert
-      expect(screen.getByTestId("light-dark-button-id")).toBeDisabled();
-  })
+    // Assert
+    expect(screen.getByTestId("light-dark-button-id")).toBeDisabled();
+  });
 });
