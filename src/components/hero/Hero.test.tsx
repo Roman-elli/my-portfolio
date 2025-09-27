@@ -25,7 +25,7 @@ describe("Hero component", () => {
       "text-[#571111] text-shadow-black/20",
     );
     expect(screen.getByTestId("writer-test-id")).toHaveClass(
-      "text-[#A87777] text-shadow-black/40",
+      "text-[#A87777] text-shadow-black/60",
     );
   });
 
