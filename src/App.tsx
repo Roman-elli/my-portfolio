@@ -1,5 +1,6 @@
 import Header from "./components/header/Header.tsx";
 import Hero from "./components/hero/Hero.tsx";
+import Sky from "./components/sky/Sky.tsx";
 import { useState } from "react";
 
 function App() {
@@ -11,16 +12,17 @@ function App() {
     setIsAnimating(true);
     setTimeout(() => {
       setIsAnimating(false);
-    }, 3000);
+    }, 5000);
   };
 
   return (
     <div
-      className={`w-screen h-screen transition-colors duration-3000 ease-linear
+      className={`w-screen h-screen transition-colors duration-5000 ease-linear
     ${mode === "light" ? "bg-light" : "bg-dark"} 
     `}
     >
       <Header mode={mode} isAnimating={isAnimating} toggleMode={toggleMode} />
+      <Sky mode={mode} />
       <Hero mode={mode} />
     </div>
   );

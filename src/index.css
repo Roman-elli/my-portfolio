@@ -3,7 +3,7 @@
 
 @theme {
   --font-space: "Noto Sans", sans-serif;
-  --color-light: #ff8888;
+  --color-light: #fc7474;
   --color-dark: #06001d;
   --animate-scalePulse: scalePulse 5s ease-in-out infinite;
 
@@ -12,7 +12,7 @@
       transform: scale(1);
     }
     50% {
-      transform: scale(1.04);
+      transform: scale(1.02);
     }
     100% {
       transform: scale(1);
