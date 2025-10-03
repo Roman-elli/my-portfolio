@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --animate-cloudA: cloudA 40s ease-in-out infinite;
-  --animate-cloudB: cloudB 50s ease-in-out infinite;
-  --animate-cloudC: cloudC 30s ease-in-out infinite;
-  --animate-cloudD: cloudD 40s ease-in-out infinite;
-  --animate-cloudE: cloudE 35s ease-in-out infinite;
-  --animate-cloudF: cloudF 23s ease-in-out infinite;
-  --animate-cloudG: cloudG 28s ease-in-out infinite;
-  --animate-cloudH: cloudH 31s ease-in-out infinite;
+  --animate-cloudA: cloudA 60s ease-in-out infinite;
+  --animate-cloudB: cloudB 70s ease-in-out infinite;
+  --animate-cloudC: cloudC 60s ease-in-out infinite;
+  --animate-cloudD: cloudD 60s ease-in-out infinite;
+  --animate-cloudE: cloudE 75s ease-in-out infinite;
+  --animate-cloudF: cloudF 43s ease-in-out infinite;
+  --animate-cloudG: cloudG 58s ease-in-out infinite;
+  --animate-cloudH: cloudH 41s ease-in-out infinite;
 
   @keyframes cloudA {
     0% {
