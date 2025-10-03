@@ -35,7 +35,7 @@ function Sky({ mode }: SkyProps) {
       pt: "pt-[30%]",
       pl: "pl-[25%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-86",
+      opacity: "opacity-100",
     },
     {
       src: cloudB,
@@ -51,7 +51,7 @@ function Sky({ mode }: SkyProps) {
       pt: "pt-[19%]",
       pl: "pl-[15%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-78",
+      opacity: "opacity-90",
     },
     {
       src: cloudD,
@@ -67,7 +67,7 @@ function Sky({ mode }: SkyProps) {
       pt: "pt-[5%]",
       pl: "pl-[35%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-70",
+      opacity: "opacity-100",
     },
     {
       src: cloudF,
@@ -83,7 +83,7 @@ function Sky({ mode }: SkyProps) {
       pt: "pt-[5%]",
       pl: "pl-[10%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-80",
+      opacity: "opacity-86",
     },
     {
       src: cloudH,
@@ -264,7 +264,7 @@ function Sky({ mode }: SkyProps) {
           <img
             src={cloud.src}
             alt={`Cloud back ${i + 1}`}
-            className={`w-[6vw] h-[9vh] transition-all duration-2000 ease-in-out fixed animate-scalePulse drop-shadow-black/40 drop-shadow-md
+            className={`w-[6vw] h-[9vh] transition-all duration-2000 ease-in-out fixed animate-scalePulse drop-shadow-yellow-400/30 drop-shadow-md
               ${sunVisible ? `${cloud.opacity}` : `${cloud.initialTranslate} opacity-0`}`}
           />
         </div>
