@@ -240,7 +240,7 @@ function Sky({ mode }: SkyProps) {
 
   return (
     <>
-      <div className="flex items-center justify-center w-full h-full fixed pb-[15%] animate-scalePulse">
+      <div className="flex items-center justify-center w-full h-full fixed pb-[15%] animate-scalePulse z-40">
         <img
           src={Sun}
           alt="Bright yellow sun in the sky"
@@ -257,14 +257,27 @@ function Sky({ mode }: SkyProps) {
                 `}
         />
       </div>
+      <div className="fixed z-50">
+        {back_clouds.map((cloud, i) => (
+          <Clouds key={i} cloud={cloud} visible={sunVisible} back />
+        ))}
 
-      {back_clouds.map((cloud, i) => (
-        <Clouds key={i} cloud={cloud} visible={sunVisible} back />
-      ))}
-
-      {clouds.map((cloud, i) => (
-        <Clouds key={i} cloud={cloud} visible={sunVisible} />
-      ))}
+        {clouds.map((cloud, i) => (
+          <Clouds key={i} cloud={cloud} visible={sunVisible} />
+        ))}
+      </div>
+      <div
+        className={`fixed w-full h-full duration-2500 ease-in-out ${moonVisible ? "opacity-90" : "opacity-0"}`}
+      >
+        <div className="stars"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+      </div>
     </>
   );
 }
