@@ -9,7 +9,7 @@ type HeaderProps = {
 
 function Header({ mode, isAnimating, toggleMode }: HeaderProps) {
   return (
-    <div className="flex flex-row w-full h-[14%] fixed z-10">
+    <div className="flex flex-row w-full h-[14%] fixed z-100">
       <div className="w-1/2 flex items-center pl-[5%]">
         <img
           src={"/my-logo.png"}
