@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Sky.css";
+import Clouds from "./../ui/cloud/Clouds.tsx";
 import Sun from "../../assets/images/sky/sun.png";
 import Moon from "../../assets/images/sky/moon.png";
 import cloudA from "../../assets/images/clouds/cloudA.png";
@@ -11,11 +12,11 @@ import cloudF from "../../assets/images/clouds/cloudF.png";
 import cloudG from "../../assets/images/clouds/cloudG.png";
 import cloudH from "../../assets/images/clouds/cloudH.png";
 
-type SkyProps = {
+export type SkyProps = {
   mode: "light" | "dark";
 };
 
-type Cloud = {
+export type Cloud = {
   src: string;
   animate: string;
   pt: string;
@@ -238,12 +239,12 @@ function Sky({ mode }: SkyProps) {
   }, [mode]);
 
   return (
-    <div className="flex w-full h-full fixed">
-      <div className="flex items-center justify-center w-full h-full pb-[15%] animate-scalePulse">
+    <>
+      <div className="flex items-center justify-center w-full h-full fixed pb-[15%] animate-scalePulse">
         <img
           src={Sun}
           alt="Bright yellow sun in the sky"
-          className={`w-[60vh] h-auto transition-all duration-2500 ease-in-out fixed drop-shadow-[0_0_50px_#FF4500]
+          className={`w-[45vh] h-auto transition-all duration-2500 ease-in-out fixed drop-shadow-[0_0_50px_#FF4500]
                   ${sunVisible ? "" : "translate-y-[135%] drop-shadow-none opacity-0"}
                 `}
         />
@@ -251,39 +252,20 @@ function Sky({ mode }: SkyProps) {
         <img
           src={Moon}
           alt="Bright white moon in the sky"
-          className={`w-[60vh] h-auto transition-all duration-2500 ease-in-out fixed
+          className={`w-[45vh] h-auto transition-all duration-2500 ease-in-out fixed
                   ${moonVisible ? "drop-shadow-[0_0_50px_#7F9CF5]" : "translate-y-[135%] drop-shadow-none opacity-0"}
                 `}
         />
       </div>
+
       {back_clouds.map((cloud, i) => (
-        <div
-          key={i}
-          className={`fixed ${cloud.pt} ${cloud.pl} ${cloud.animate}`}
-        >
-          <img
-            src={cloud.src}
-            alt={`Cloud back ${i + 1}`}
-            className={`w-[clamp(80px,6vw,140px)] h-auto transition-all duration-2000 ease-in-out fixed animate-scalePulse drop-shadow-yellow-400/30 drop-shadow-md
-              ${sunVisible ? `${cloud.opacity}` : `${cloud.initialTranslate} opacity-0`}`}
-          />
-        </div>
+        <Clouds key={i} cloud={cloud} visible={sunVisible} back />
       ))}
 
       {clouds.map((cloud, i) => (
-        <div
-          key={i}
-          className={`fixed ${cloud.pt} ${cloud.pl} ${cloud.animate}`}
-        >
-          <img
-            src={cloud.src}
-            alt={`Cloud ${i + 1}`}
-            className={`w-[clamp(110px,12vw,200px)] min-w-[5vw] h-auto transition-all duration-3000 ease-in-out fixed animate-scalePulse drop-shadow-yellow-400/30 drop-shadow-lg
-              ${sunVisible ? `${cloud.opacity}` : `${cloud.initialTranslate} opacity-0`}`}
-          />
-        </div>
+        <Clouds key={i} cloud={cloud} visible={sunVisible} />
       ))}
-    </div>
+    </>
   );
 }
 
