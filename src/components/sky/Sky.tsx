@@ -21,6 +21,7 @@ type Cloud = {
   pt: string;
   pl: string;
   initialTranslate: string;
+  opacity: string;
 };
 
 function Sky({ mode }: SkyProps) {
@@ -31,58 +32,66 @@ function Sky({ mode }: SkyProps) {
     {
       src: cloudA,
       animate: "animate-cloudA",
-      pt: "30%",
-      pl: "25%",
-      initialTranslate: "-200%",
+      pt: "pt-[30%]",
+      pl: "pl-[25%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-86",
     },
     {
       src: cloudB,
       animate: "animate-cloudB",
-      pt: "18%",
-      pl: "70%",
-      initialTranslate: "200%",
+      pt: "pt-[18%]",
+      pl: "pl-[70%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-89",
     },
     {
       src: cloudC,
       animate: "animate-cloudC",
-      pt: "19%",
-      pl: "15%",
-      initialTranslate: "-200%",
+      pt: "pt-[19%]",
+      pl: "pl-[15%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-78",
     },
     {
       src: cloudD,
       animate: "animate-cloudD",
-      pt: "30%",
-      pl: "60%",
-      initialTranslate: "200%",
+      pt: "pt-[30%]",
+      pl: "pl-[60%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-75",
     },
     {
       src: cloudE,
       animate: "animate-cloudE",
-      pt: "5%",
-      pl: "35%",
-      initialTranslate: "-200%",
+      pt: "pt-[5%]",
+      pl: "pl-[35%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-70",
     },
     {
       src: cloudF,
       animate: "animate-cloudF",
-      pt: "5%",
-      pl: "70%",
-      initialTranslate: "200%",
+      pt: "pt-[5%]",
+      pl: "pl-[70%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-85",
     },
     {
       src: cloudG,
       animate: "animate-cloudG",
-      pt: "5%",
-      pl: "10%",
-      initialTranslate: "-200%",
+      pt: "pt-[5%]",
+      pl: "pl-[10%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-80",
     },
     {
       src: cloudH,
       animate: "animate-cloudH",
-      pt: "18%",
-      pl: "50%",
-      initialTranslate: "200%",
+      pt: "pt-[18%]",
+      pl: "pl-[50%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-90",
     },
   ];
 
@@ -90,58 +99,131 @@ function Sky({ mode }: SkyProps) {
     {
       src: cloudA,
       animate: "animate-cloudB",
-      pt: "10%",
-      pl: "30%",
-      initialTranslate: "-200%",
+      pt: "pt-[10%]",
+      pl: "pl-[30%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-50",
     },
     {
       src: cloudB,
       animate: "animate-cloudH",
-      pt: "20%",
-      pl: "40%",
-      initialTranslate: "200%",
+      pt: "pt-[20%]",
+      pl: "pl-[40%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-35",
     },
     {
       src: cloudC,
       animate: "animate-cloudD",
-      pt: "30%",
-      pl: "70%",
-      initialTranslate: "-200%",
+      pt: "pt-[25%]",
+      pl: "pl-[70%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-45",
     },
     {
       src: cloudD,
       animate: "animate-cloudA",
-      pt: "20%",
-      pl: "60%",
-      initialTranslate: "200%",
+      pt: "pt-[20%]",
+      pl: "pl-[60%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-60",
     },
     {
       src: cloudE,
       animate: "animate-cloudE",
-      pt: "30%",
-      pl: "40%",
-      initialTranslate: "-200%",
+      pt: "pt-[30%]",
+      pl: "pl-[40%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-30",
     },
     {
       src: cloudF,
       animate: "animate-cloudC",
-      pt: "30%",
-      pl: "20%",
-      initialTranslate: "200%",
+      pt: "pt-[30%]",
+      pl: "pl-[20%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-35",
     },
     {
       src: cloudG,
       animate: "animate-cloudG",
-      pt: "15%",
-      pl: "50%",
-      initialTranslate: "-200%",
+      pt: "pt-[15%]",
+      pl: "pl-[50%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-38",
     },
     {
       src: cloudH,
       animate: "animate-cloudF",
-      pt: "10%",
-      pl: "60%",
-      initialTranslate: "200%",
+      pt: "pt-[10%]",
+      pl: "pl-[60%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-30",
+    },
+
+    {
+      src: cloudA,
+      animate: "animate-cloudB",
+      pt: "pt-[30%]",
+      pl: "pl-[10%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-90",
+    },
+    {
+      src: cloudB,
+      animate: "animate-cloudH",
+      pt: "pt-[2%]",
+      pl: "pl-[40%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-80",
+    },
+    {
+      src: cloudC,
+      animate: "animate-cloudD",
+      pt: "pt-[20%]",
+      pl: "pl-[85%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-60",
+    },
+    {
+      src: cloudD,
+      animate: "animate-cloudA",
+      pt: "pt-[15%]",
+      pl: "pl-[40%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-76",
+    },
+    {
+      src: cloudE,
+      animate: "animate-cloudE",
+      pt: "pt-[30%]",
+      pl: "pl-[80%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-50",
+    },
+    {
+      src: cloudF,
+      animate: "animate-cloudC",
+      pt: "pt-[3%]",
+      pl: "pl-[20%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-40",
+    },
+    {
+      src: cloudG,
+      animate: "animate-cloudG",
+      pt: "pt-[1%]",
+      pl: "pl-[50%]",
+      initialTranslate: "translate-x-[-200%]",
+      opacity: "opacity-60",
+    },
+    {
+      src: cloudH,
+      animate: "animate-cloudF",
+      pt: "pt-[12%]",
+      pl: "pl-[80%]",
+      initialTranslate: "translate-x-[200%]",
+      opacity: "opacity-70",
     },
   ];
 
@@ -177,26 +259,27 @@ function Sky({ mode }: SkyProps) {
       {back_clouds.map((cloud, i) => (
         <div
           key={i}
-          className={`flex w-full h-full fixed pt-[${cloud.pt}] pl-[${cloud.pl}] ${cloud.animate}`}
+          className={`flex w-full h-full fixed ${cloud.pt} ${cloud.pl} ${cloud.animate}`}
         >
           <img
             src={cloud.src}
-            alt={`Cloud ${i + 1}`}
-            className={`w-[6vw] h-[5vw] transition-all duration-3000 ease-in-out fixed animate-scalePulse drop-shadow-black/40 drop-shadow-md
-                    ${sunVisible ? "opacity-40" : `translate-x-[${cloud.initialTranslate}] opacity-0`}`}
+            alt={`Cloud back ${i + 1}`}
+            className={`w-[6vw] h-[9vh] transition-all duration-2000 ease-in-out fixed animate-scalePulse drop-shadow-black/40 drop-shadow-md
+              ${sunVisible ? `${cloud.opacity}` : `${cloud.initialTranslate} opacity-0`}`}
           />
         </div>
       ))}
+
       {clouds.map((cloud, i) => (
         <div
           key={i}
-          className={`flex w-full h-full fixed pt-[${cloud.pt}] pl-[${cloud.pl}] ${cloud.animate}`}
+          className={`flex w-full h-full fixed ${cloud.pt} ${cloud.pl} ${cloud.animate}`}
         >
           <img
             src={cloud.src}
             alt={`Cloud ${i + 1}`}
-            className={`w-[12vw] h-[8vw] transition-all duration-2000 ease-in-out fixed animate-scalePulse drop-shadow-yellow-400/30 drop-shadow-lg
-                    ${sunVisible ? "opacity-95" : `translate-x-[${cloud.initialTranslate}] opacity-0`}`}
+            className={`w-[12vw] h-[15vh] transition-all duration-3000 ease-in-out fixed animate-scalePulse drop-shadow-yellow-400/30 drop-shadow-lg
+              ${sunVisible ? `${cloud.opacity}` : `${cloud.initialTranslate} opacity-0`}`}
           />
         </div>
       ))}
