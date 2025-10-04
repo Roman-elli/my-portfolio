@@ -14,6 +14,7 @@ import cloudH from "../../assets/images/clouds/cloudH.png";
 
 export type SkyProps = {
   mode: "light" | "dark";
+  isStart: boolean;
 };
 
 export type Cloud = {
@@ -25,7 +26,7 @@ export type Cloud = {
   opacity: string;
 };
 
-function Sky({ mode }: SkyProps) {
+function Sky({ mode, isStart }: SkyProps) {
   const [sunVisible, setSunVisible] = useState(mode === "light");
   const [moonVisible, setMoonVisible] = useState(mode === "dark");
 
@@ -245,29 +246,33 @@ function Sky({ mode }: SkyProps) {
           src={Sun}
           alt="Bright yellow sun in the sky"
           className={`w-[45vh] h-auto transition-all duration-2500 ease-in-out fixed drop-shadow-[0_0_50px_#FF4500]
-                  ${sunVisible ? "" : "translate-y-[135%] drop-shadow-none opacity-0"}
+                  ${sunVisible && !isStart ? "" : "translate-y-[150%] drop-shadow-none opacity-0"}
                 `}
+          data-testid="sun-id"
         />
 
         <img
           src={Moon}
           alt="Bright white moon in the sky"
           className={`w-[45vh] h-auto transition-all duration-2500 ease-in-out fixed
-                  ${moonVisible ? "drop-shadow-[0_0_50px_#7F9CF5]" : "translate-y-[135%] drop-shadow-none opacity-0"}
+                  ${moonVisible ? "drop-shadow-[0_0_50px_#7F9CF5]" : "translate-y-[150%] drop-shadow-none opacity-0"}
                 `}
+          data-testid="moon-id"
         />
       </div>
       <div className="fixed z-50">
         {back_clouds.map((cloud, i) => (
-          <Clouds key={i} cloud={cloud} visible={sunVisible} back />
+          <Clouds key={i} cloud={cloud} visible={sunVisible && !isStart} back />
         ))}
 
         {clouds.map((cloud, i) => (
-          <Clouds key={i} cloud={cloud} visible={sunVisible} />
+          <Clouds key={i} cloud={cloud} visible={sunVisible && !isStart} />
         ))}
       </div>
       <div
-        className={`fixed w-full h-full duration-2500 ease-in-out ${moonVisible ? "opacity-90" : "opacity-0"}`}
+        className={`fixed w-full h-full duration-2500 ease-in-out 
+        ${moonVisible ? "opacity-90" : "opacity-0"}`}
+        data-testid="night-sky-id"
       >
         <div className="stars"></div>
         <div className="shooting-star"></div>
