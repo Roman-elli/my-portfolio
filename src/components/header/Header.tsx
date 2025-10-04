@@ -5,11 +5,17 @@ type HeaderProps = {
   mode: "light" | "dark";
   isAnimating: boolean;
   toggleMode: () => void;
+  isStart: boolean;
 };
 
-function Header({ mode, isAnimating, toggleMode }: HeaderProps) {
+function Header({ mode, isAnimating, toggleMode, isStart }: HeaderProps) {
   return (
-    <div className="flex flex-row w-full h-[14%] fixed z-100">
+    <div
+      className={`flex flex-row w-full h-[14%] fixed z-100 duration-2500
+    ${isStart ? "translate-y-[-20vh]" : ""}
+    `}
+      data-testid="header-id"
+    >
       <div className="w-1/2 flex items-center pl-[5%]">
         <img
           src={"/my-logo.png"}
