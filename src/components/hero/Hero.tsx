@@ -2,7 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 type BackgroundProps = {
   mode: "light" | "dark";
   isStart: boolean;
-};y
+};
 
 function Hero({ mode, isStart }: BackgroundProps) {
   return (
