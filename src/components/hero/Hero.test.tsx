@@ -5,7 +5,7 @@ import Hero from "./Hero";
 describe("Hero component", () => {
   it("render all background texts and writer", () => {
     // Act
-    render(<Hero mode={"light"} />);
+    render(<Hero mode={"light"} isStart={false} />);
 
     // Assert
     expect(screen.getByTestId("hi-test-id")).toBeInTheDocument();
@@ -15,7 +15,7 @@ describe("Hero component", () => {
 
   it("render right color when light mode", () => {
     // Act
-    render(<Hero mode={"light"} />);
+    render(<Hero mode={"light"} isStart={false} />);
 
     // Assert
     expect(screen.getByTestId("hi-test-id")).toHaveClass(
@@ -31,7 +31,7 @@ describe("Hero component", () => {
 
   it("render right color when dark mode", () => {
     // Act
-    render(<Hero mode={"dark"} />);
+    render(<Hero mode={"dark"} isStart={false} />);
 
     // Assert
     expect(screen.getByTestId("hi-test-id")).toHaveClass(
@@ -47,7 +47,7 @@ describe("Hero component", () => {
 
   it("renders TypeAnimation component", () => {
     // Act
-    render(<Hero mode="light" />);
+    render(<Hero mode="light" isStart={false} />);
 
     // Arrange
     const animation = screen
@@ -56,5 +56,15 @@ describe("Hero component", () => {
 
     // Assert
     expect(animation).toBeInTheDocument();
+  });
+
+  it("check when reload page all DOM stays transparent", () => {
+    // Act
+    render(<Hero mode={"light"} isStart={true} />);
+
+    // Assert
+    expect(screen.getByTestId("hi-test-id")).toHaveClass("opacity-0");
+    expect(screen.getByTestId("name-test-id")).toHaveClass("opacity-0");
+    expect(screen.getByTestId("writer-test-id")).toHaveClass("opacity-0");
   });
 });
