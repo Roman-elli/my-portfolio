@@ -9,7 +9,12 @@ describe("Header component", () => {
 
     // Act
     render(
-      <Header mode="light" isAnimating={false} toggleMode={toggleModeMock} />,
+      <Header
+        mode="light"
+        isAnimating={false}
+        toggleMode={toggleModeMock}
+        isStart={false}
+      />,
     );
 
     // Assert
@@ -24,7 +29,12 @@ describe("Header component", () => {
 
     // Act
     render(
-      <Header mode="dark" isAnimating={false} toggleMode={toggleModeMock} />,
+      <Header
+        mode="dark"
+        isAnimating={false}
+        toggleMode={toggleModeMock}
+        isStart={false}
+      />,
     );
     fireEvent.click(screen.getByTestId("light-dark-button-id"));
 
@@ -40,7 +50,12 @@ describe("Header component", () => {
 
     // Act
     render(
-      <Header mode="light" isAnimating={false} toggleMode={toggleModeMock} />,
+      <Header
+        mode="light"
+        isAnimating={false}
+        toggleMode={toggleModeMock}
+        isStart={false}
+      />,
     );
     fireEvent.click(screen.getByTestId("download-button-id"));
 
@@ -55,7 +70,12 @@ describe("Header component", () => {
 
     // Act
     render(
-      <Header mode={"light"} isAnimating={false} toggleMode={toggleModeMock} />,
+      <Header
+        mode={"light"}
+        isAnimating={false}
+        toggleMode={toggleModeMock}
+        isStart={false}
+      />,
     );
 
     // Assert
@@ -72,7 +92,12 @@ describe("Header component", () => {
 
     // Act
     render(
-      <Header mode={"dark"} isAnimating={false} toggleMode={toggleModeMock} />,
+      <Header
+        mode={"dark"}
+        isAnimating={false}
+        toggleMode={toggleModeMock}
+        isStart={false}
+      />,
     );
 
     // Assert
@@ -89,10 +114,33 @@ describe("Header component", () => {
 
     // Act
     render(
-      <Header mode={"dark"} isAnimating={true} toggleMode={toggleModeMock} />,
+      <Header
+        mode={"dark"}
+        isAnimating={true}
+        toggleMode={toggleModeMock}
+        isStart={false}
+      />,
     );
 
     // Assert
     expect(screen.getByTestId("light-dark-button-id")).toBeDisabled();
+  });
+
+  it("stays above the screen when reload page", () => {
+    // Arrange
+    const toggleModeMock = vi.fn();
+
+    // Act
+    render(
+      <Header
+        mode={"light"}
+        isAnimating={false}
+        toggleMode={toggleModeMock}
+        isStart={true}
+      />,
+    );
+
+    // Assert
+    expect(screen.getByTestId("header-id")).toHaveClass("translate-y-[-20vh]");
   });
 });
