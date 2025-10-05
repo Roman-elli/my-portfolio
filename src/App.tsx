@@ -1,6 +1,7 @@
 import Header from "./components/header/Header.tsx";
 import Hero from "./components/hero/Hero.tsx";
 import Sky from "./components/sky/Sky.tsx";
+import Contact from "./components/contact/Contact.tsx";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       />
       <Sky mode={mode} isStart={isStart} />
       <Hero mode={mode} isStart={isStart} />
+      <Contact mode={mode} isStart={isStart} isAnimating={isAnimating} />
     </div>
   );
 }
