@@ -21,8 +21,8 @@ function Contact({ mode, isStart, isAnimating }: ContactProps) {
         className="cursor-pointer"
       >
         <FaGithub
-          className={` w-[clamp(2rem,2.3vw,4vw)] h-auto hover:scale-110 ease-in-out drop-shadow-md hover:animate-contactButtonBounce
-                ${mode === "light" ? "text-[#571111] drop-shadow-white/70 hover:text-white hover:drop-shadow-white" : " text-[#95C1F8] drop-shadow-yellow-400/70 hover:text-white hover:drop-shadow-yellow-400"}
+          className={` w-[clamp(2rem,2.3vw,4vw)] h-auto hover:scale-110 ease-in-out hover:drop-shadow-md hover:animate-contactButtonBounce
+                ${mode === "light" ? "text-[#571111] hover:text-white hover:drop-shadow-[0_0_10px_#ffffff]" : " text-[#95C1F8] hover:text-white  hover:drop-shadow-[0_0_10px_#FACC15]"}
                 ${isAnimating ? "duration-2500" : "duration-400"}
                 
                 `}
@@ -37,8 +37,8 @@ function Contact({ mode, isStart, isAnimating }: ContactProps) {
         className="cursor-pointer"
       >
         <FaLinkedin
-          className={` w-[clamp(2rem,2.3vw,4vw)] h-auto hover:scale-110 ease-in-out drop-shadow-md hover:animate-contactButtonBounce
-                ${mode === "light" ? "text-[#571111] drop-shadow-white/70 hover:text-white hover:drop-shadow-white" : " text-[#95C1F8] drop-shadow-yellow-400/70 hover:text-white hover:drop-shadow-yellow-400"}
+          className={` w-[clamp(2rem,2.3vw,4vw)] h-auto hover:scale-110 ease-in-out hover:drop-shadow-md hover:animate-contactButtonBounce
+                ${mode === "light" ? "text-[#571111] hover:text-white hover:drop-shadow-[0_0_10px_#ffffff]" : " text-[#95C1F8] hover:text-white  hover:drop-shadow-[0_0_10px_#FACC15]"}
                 ${isAnimating ? "duration-2500" : "duration-400"}
                 `}
           data-testid="linkedin-icon-id"
@@ -47,7 +47,7 @@ function Contact({ mode, isStart, isAnimating }: ContactProps) {
 
       <div
         className={`w-[4px] rounded-full duration-2500 transition-all ease-in-out h-[clamp(1rem,3vh,2rem)] sm:h-[2rem] md:h-[clamp(3rem,12vh,10rem)]
-              ${mode === "light" ? "bg-[#571111]/60 shadow-[0_0_10px_#ffffff]" : "bg-[#60A5FA] shadow-[0_0_10px_#FACC15]"}
+              ${mode === "light" ? "bg-[#571111]/60" : "bg-[#60A5FA]"}
             `}
         data-testid="underbar-id"
       ></div>

@@ -22,14 +22,12 @@ describe("Contact bar component", () => {
 
     // Assert
     expect(screen.getByTestId("git-icon-id")).toHaveClass(
-      "text-[#571111] drop-shadow-white/70 hover:text-white hover:drop-shadow-white duration-400",
+      "text-[#571111] hover:text-white hover:drop-shadow-[0_0_10px_#ffffff] duration-400",
     );
     expect(screen.getByTestId("linkedin-icon-id")).toHaveClass(
-      "text-[#571111] drop-shadow-white/70 hover:text-white hover:drop-shadow-white duration-400",
+      "text-[#571111] hover:text-white hover:drop-shadow-[0_0_10px_#ffffff] duration-400",
     );
-    expect(screen.getByTestId("underbar-id")).toHaveClass(
-      "bg-[#571111]/60 shadow-[0_0_10px_#ffffff]",
-    );
+    expect(screen.getByTestId("underbar-id")).toHaveClass("bg-[#571111]/60");
   });
 
   it("renders icons/underbar with correctly design when dark mode on", () => {
@@ -38,14 +36,12 @@ describe("Contact bar component", () => {
 
     // Assert
     expect(screen.getByTestId("git-icon-id")).toHaveClass(
-      "text-[#95C1F8] drop-shadow-yellow-400/70 hover:text-white hover:drop-shadow-yellow-400 duration-400",
+      "text-[#95C1F8] hover:text-white  hover:drop-shadow-[0_0_10px_#FACC15] duration-400",
     );
     expect(screen.getByTestId("linkedin-icon-id")).toHaveClass(
-      "text-[#95C1F8] drop-shadow-yellow-400/70 hover:text-white hover:drop-shadow-yellow-400 duration-400",
+      "text-[#95C1F8] hover:text-white  hover:drop-shadow-[0_0_10px_#FACC15] duration-400",
     );
-    expect(screen.getByTestId("underbar-id")).toHaveClass(
-      "bg-[#60A5FA] shadow-[0_0_10px_#FACC15]",
-    );
+    expect(screen.getByTestId("underbar-id")).toHaveClass("bg-[#60A5FA]");
   });
 
   it("hide the component when page is reloaded", () => {
