@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-contactButtonBounce: contactButtonBounce 1.5s ease-in-out infinite;
+
+  @keyframes contactButtonBounce {
+    0%,
+    100% {
+      transform: rotate(0deg) translateY(0);
+    }
+    20% {
+      transform: rotate(15deg) translateY(-5%);
+    }
+    40% {
+      transform: rotate(-10deg) translateY(-2%);
+    }
+    60% {
+      transform: rotate(5deg) translateY(-3%);
+    }
+    80% {
+      transform: rotate(-5deg) translateY(-1%);
+    }
+  }
+}
