@@ -19,13 +19,13 @@ describe("Hero component", () => {
 
     // Assert
     expect(screen.getByTestId("hi-test-id")).toHaveClass(
-      "text-black text-shadow-black/20",
+      "text-rose-950/90 text-shadow-black/20",
     );
     expect(screen.getByTestId("name-test-id")).toHaveClass(
-      "text-[#571111] text-shadow-black/20",
+      "text-rose-950/90 text-shadow-black/20",
     );
     expect(screen.getByTestId("writer-test-id")).toHaveClass(
-      "text-[#A87777] text-shadow-black/60",
+      "text-white/80 text-shadow-black/60",
     );
   });
 
