@@ -36,7 +36,7 @@ function Contact({ mode, isStart, isAnimating }: ContactProps) {
       >
         <FaLinkedin
           className={` w-[clamp(2rem,2.3vw,4vw)] h-auto hover:scale-110 ease-in-out drop-shadow-md hover:animate-contactButtonBounce
-                ${mode === "light" ? "text-[#571111] drop-shadow-white/70 hover:text-white hover:drop-shadow-shadow-white" : " text-[#95C1F8] drop-shadow-yellow-400/50 hover:text-white hover:drop-shadow-shadow-yellow-400"}
+                ${mode === "light" ? "text-[#571111] drop-shadow-white/70 hover:text-white hover:drop-shadow-white" : " text-[#95C1F8] drop-shadow-yellow-400/50 hover:text-white hover:drop-shadow-yellow-400"}
                 ${isAnimating ? "duration-2500" : "duration-400"}
                 `}
         />
