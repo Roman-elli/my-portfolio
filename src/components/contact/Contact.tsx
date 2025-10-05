@@ -46,7 +46,7 @@ function Contact({ mode, isStart, isAnimating }: ContactProps) {
       </a>
 
       <div
-        className={`w-[4px] rounded-full duration-2500 transition-all ease-in-out h-[clamp(8vh,12vh,18vh)]
+        className={`w-[4px] rounded-full duration-2500 transition-all ease-in-out h-[clamp(3rem,10vh,5rem)]
               ${mode === "light" ? "bg-[#571111]/60 shadow-[0_0_10px_#ffffff]" : "bg-[#60A5FA] shadow-[0_0_10px_#FACC15]"}
             `}
         data-testid="underbar-id"
