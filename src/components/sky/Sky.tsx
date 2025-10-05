@@ -241,7 +241,7 @@ function Sky({ mode, isStart }: SkyProps) {
 
   return (
     <>
-      <div className="flex items-center justify-center w-full h-full fixed pb-[15%] animate-scalePulse z-40 ease-in-out duration-2000">
+      <div className="flex items-center justify-center w-full h-[100%] fixed pb-[15%] animate-scalePulse z-40">
         <img
           src={Sun}
           alt="Bright yellow sun in the sky"

@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div
-      className={`w-screen h-screen transition-colors duration-5000 ease-linear
+      className={`w-[100svw] h-[100svh] transition-colors duration-5000 ease-linear
     ${mode === "light" ? "bg-light" : "bg-dark"} 
     ${isStart ? "bg-light/30" : ""}
     `}
