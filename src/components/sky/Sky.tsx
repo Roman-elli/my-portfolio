@@ -104,7 +104,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[21vh]",
       pl: "pl-[30%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-50",
+      opacity: "opacity-70",
     },
     {
       src: cloudB,
@@ -112,7 +112,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[42vh]",
       pl: "pl-[40%]",
       initialTranslate: "translate-x-[200%]",
-      opacity: "opacity-35",
+      opacity: "opacity-86",
     },
     {
       src: cloudC,
@@ -120,7 +120,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[52vh]",
       pl: "pl-[70%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-45",
+      opacity: "opacity-55",
     },
     {
       src: cloudD,
@@ -128,7 +128,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[42vh]",
       pl: "pl-[60%]",
       initialTranslate: "translate-x-[200%]",
-      opacity: "opacity-60",
+      opacity: "opacity-80",
     },
     {
       src: cloudE,
@@ -136,7 +136,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[63vh]",
       pl: "pl-[40%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-30",
+      opacity: "opacity-70",
     },
     {
       src: cloudF,
@@ -144,7 +144,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[63vh]",
       pl: "pl-[20%]",
       initialTranslate: "translate-x-[200%]",
-      opacity: "opacity-35",
+      opacity: "opacity-45",
     },
     {
       src: cloudG,
@@ -152,7 +152,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[31vh]",
       pl: "pl-[50%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-38",
+      opacity: "opacity-60",
     },
     {
       src: cloudH,
@@ -160,7 +160,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[21vh]",
       pl: "pl-[60%]",
       initialTranslate: "translate-x-[200%]",
-      opacity: "opacity-30",
+      opacity: "opacity-46",
     },
 
     {
@@ -185,7 +185,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[42vh]",
       pl: "pl-[85%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-60",
+      opacity: "opacity-80",
     },
     {
       src: cloudD,
@@ -201,7 +201,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[63vh]",
       pl: "pl-[80%]",
       initialTranslate: "translate-x-[-200%]",
-      opacity: "opacity-50",
+      opacity: "opacity-70",
     },
     {
       src: cloudF,
@@ -209,7 +209,7 @@ function Sky({ mode, isStart }: SkyProps) {
       pt: "pt-[7vh]",
       pl: "pl-[20%]",
       initialTranslate: "translate-x-[200%]",
-      opacity: "opacity-40",
+      opacity: "opacity-80",
     },
     {
       src: cloudG,
