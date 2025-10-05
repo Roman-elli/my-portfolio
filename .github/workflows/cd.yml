@@ -3,7 +3,7 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - '**'
+      - main
 
 jobs:
   deploy:
@@ -34,7 +34,8 @@ jobs:
       - name: Deploy to Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-        run: yarn vercel --prod --token $VERCEL_TOKEN --confirm --name my-portfolio --team ${{ secrets.VERCEL_ORG_ID }}
+        run: yarn vercel --prod --token $VERCEL_TOKEN --yes --scope ${{ secrets.VERCEL_ORG_ID }}
+        
 
 
 
