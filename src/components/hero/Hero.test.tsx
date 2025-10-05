@@ -18,12 +18,8 @@ describe("Hero component", () => {
     render(<Hero mode={"light"} isStart={false} />);
 
     // Assert
-    expect(screen.getByTestId("hi-test-id")).toHaveClass(
-      "text-rose-950/90",
-    );
-    expect(screen.getByTestId("name-test-id")).toHaveClass(
-      "text-rose-950/90",
-    );
+    expect(screen.getByTestId("hi-test-id")).toHaveClass("text-rose-950/90");
+    expect(screen.getByTestId("name-test-id")).toHaveClass("text-rose-950/90");
     expect(screen.getByTestId("writer-test-id")).toHaveClass(
       "text-white/80 text-shadow-black/60",
     );
@@ -34,15 +30,9 @@ describe("Hero component", () => {
     render(<Hero mode={"dark"} isStart={false} />);
 
     // Assert
-    expect(screen.getByTestId("hi-test-id")).toHaveClass(
-      "text-white",
-    );
-    expect(screen.getByTestId("name-test-id")).toHaveClass(
-      "text-[#60A5FA]",
-    );
-    expect(screen.getByTestId("writer-test-id")).toHaveClass(
-      "text-[#95C1F8]",
-    );
+    expect(screen.getByTestId("hi-test-id")).toHaveClass("text-white");
+    expect(screen.getByTestId("name-test-id")).toHaveClass("text-[#60A5FA]");
+    expect(screen.getByTestId("writer-test-id")).toHaveClass("text-[#95C1F8]");
   });
 
   it("renders TypeAnimation component", () => {
