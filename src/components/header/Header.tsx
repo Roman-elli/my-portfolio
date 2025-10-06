@@ -50,7 +50,7 @@ function Header({ mode, isAnimating, toggleMode, isStart }: HeaderProps) {
         </div>
         <div>
           <button
-            className="flex items-center justify-center rounded-full transition-all duration-600 border
+            className="flex items-center justify-center rounded-full transition-all duration-1000 border
              hover:scale-110 hover:text-red-600 hover:shadow-red-500/20 hover:shadow-md shadow-md shadow-gray-400/50
              disabled:rotate-360 disabled:opacity-20 disabled:hover:scale-80 disabled:scale-80 disabled:duration-1500
              bg-indigo-100 border-black/15 p-1.5 sm:p-2"
