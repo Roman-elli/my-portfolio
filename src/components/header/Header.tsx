@@ -27,7 +27,7 @@ function Header({ mode, isAnimating, toggleMode, isStart }: HeaderProps) {
           data-testid="logo-image-id"
         />
       </div>
-      <div className="w-1/2 flex justify-end items-center gap-[3vw] pr-[clamp(40px,7vh,10%)]">
+      <div className="w-1/2 flex justify-end items-center gap-[3vw] pr-[3vw]">
         <div>
           <button
             className="
@@ -58,7 +58,7 @@ function Header({ mode, isAnimating, toggleMode, isStart }: HeaderProps) {
             disabled={isAnimating}
             data-testid="light-dark-button-id"
           >
-            <div className="relative w-[2.5vh] h-[2.5vh] md:w-[3vh] md:h-[3vh] flex items-center justify-center">
+            <div className="relative w-[2.8vh] h-[2.8vh] md:w-[3vh] md:h-[3vh] flex items-center justify-center">
               <PiSunLight
                 data-testid="sun-icon-id"
                 className={`absolute transition-opacity duration-1000 w-[100%] h-auto ${
