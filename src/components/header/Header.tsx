@@ -20,10 +20,10 @@ function Header({ mode, isAnimating, toggleMode, isStart }: HeaderProps) {
         <img
           src={"/my-logo.png"}
           alt="My logo"
-          className="w-[8%] min-w-[3.7rem] max-w-[7rem] transition-all duration-900 rounded-full ease-in-out
-          shadow-md shadow-yellow-400
+          className={`w-[8%] min-w-[3.7rem] max-w-[7rem] transition-all duration-5000 rounded-full ease-in-out
+          ${mode === "dark" ? "shadow-md shadow-yellow-400" : ""}
           hover:shadow-white/40 hover:shadow-xl hover:scale-105
-          "
+          `}
           data-testid="logo-image-id"
         />
       </div>
@@ -50,27 +50,24 @@ function Header({ mode, isAnimating, toggleMode, isStart }: HeaderProps) {
         </div>
         <div>
           <button
-            className="p-[30%] rounded-full transition-all duration-900 border
-            hover:scale-110 hover:text-red-600 hover:shadow-red-500/70 hover:shadow-xl shadow-md shadow-gray-400/50
-            disabled:rotate-360 disabled:opacity-20 disabled:hover:scale-80 disabled:scale-80 disabled:duration-1500
-            bg-indigo-100 border-black/15
-            "
+            className="flex items-center justify-center rounded-full transition-all duration-600 border
+             hover:scale-110 hover:text-red-600 hover:shadow-red-500/20 hover:shadow-md shadow-md shadow-gray-400/50
+             disabled:rotate-360 disabled:opacity-20 disabled:hover:scale-80 disabled:scale-80 disabled:duration-1500
+             bg-indigo-100 border-black/15 p-1.5 sm:p-2"
             onClick={toggleMode}
             disabled={isAnimating}
             data-testid="light-dark-button-id"
           >
-            <div className="relative w-6 h-6">
+            <div className="relative w-[2.5vh] h-[2.5vh] md:w-[3vh] md:h-[3vh] flex items-center justify-center">
               <PiSunLight
                 data-testid="sun-icon-id"
-                size={24}
-                className={`absolute transition-opacity duration-1000 ${
+                className={`absolute transition-opacity duration-1000 w-[100%] h-auto ${
                   mode === "light" ? "opacity-100" : "opacity-0"
                 }`}
               />
               <PiMoon
                 data-testid="moon-icon-id"
-                size={24}
-                className={`absolute transition-opacity duration-1000 ${
+                className={`absolute transition-opacity duration-1000 w-[100%] h-auto ${
                   mode === "dark" ? "opacity-100" : "opacity-0"
                 }`}
               />
