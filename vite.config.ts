@@ -10,6 +10,9 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
+    build: {
+        chunkSizeWarningLimit: 2000,
+    },
     test: {
         globals: true,
         environment: "jsdom",
