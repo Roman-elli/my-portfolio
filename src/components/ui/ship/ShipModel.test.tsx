@@ -1,20 +1,20 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { describe, it, vi, beforeEach } from "vitest";
-import { Group } from "three";
 import ShipModel from "./ShipModel";
 
 const playMock = vi.fn();
 
 vi.mock("@react-three/drei", () => {
-  type GLTFResult = {
-    scene: Group;
+  type MockGLTF = {
+    scene: { type: string };
     animations: unknown[];
+    preload?: (model: string) => void;
   };
 
-  const useGLTF: (() => GLTFResult) & { preload: (model: string) => void } =
+  const useGLTF: (() => MockGLTF) & { preload: (model: string) => void } =
     Object.assign(
       () => ({
-        scene: new Group(),
+        scene: { type: "Group" },
         animations: [{}],
       }),
       { preload: vi.fn() },
@@ -38,10 +38,10 @@ beforeEach(() => {
   mockUseThree.mockReturnValue({ size: { width: 800, height: 600 } });
 });
 
-describe("ShipModel", () => {
-  it("renders the group with the primitive object", () => {
+describe("ShipModel component", () => {
+  it("renders a group with a primitive inside", () => {
     // Act
-    render(
+    const { container } = render(
       <ShipModel
         model="/spaceship.glb"
         lowSize={0.5}
@@ -51,7 +51,8 @@ describe("ShipModel", () => {
     );
 
     // Assert
-    expect(screen.getByTestId("shipModel-group-test-id")).toBeInTheDocument();
+    expect(container.querySelector("group")).toBeTruthy();
+    expect(container.querySelector("primitive")).toBeTruthy();
   });
 
   it("applies lowSize for small screens", () => {
@@ -59,7 +60,7 @@ describe("ShipModel", () => {
     mockUseThree.mockReturnValue({ size: { width: 500, height: 600 } });
 
     // Act
-    render(
+    const { container } = render(
       <ShipModel
         model="/spaceship.glb"
         lowSize={0.5}
@@ -69,8 +70,7 @@ describe("ShipModel", () => {
     );
 
     // Assert
-    expect(screen.getByTestId("shipModel-group-test-id")).toHaveAttribute(
-      "scale",
+    expect(container.querySelector("group")?.getAttribute("scale")).toBe(
       "0.5,0.5,0.5",
     );
   });
@@ -80,7 +80,7 @@ describe("ShipModel", () => {
     mockUseThree.mockReturnValue({ size: { width: 800, height: 600 } });
 
     // Act
-    render(
+    const { container } = render(
       <ShipModel
         model="/spaceship.glb"
         lowSize={0.5}
@@ -90,8 +90,7 @@ describe("ShipModel", () => {
     );
 
     // Assert
-    expect(screen.getByTestId("shipModel-group-test-id")).toHaveAttribute(
-      "scale",
+    expect(container.querySelector("group")?.getAttribute("scale")).toBe(
       "1,1,1",
     );
   });
@@ -101,7 +100,7 @@ describe("ShipModel", () => {
     mockUseThree.mockReturnValue({ size: { width: 1200, height: 800 } });
 
     // Act
-    render(
+    const { container } = render(
       <ShipModel
         model="/spaceship.glb"
         lowSize={0.5}
@@ -111,8 +110,7 @@ describe("ShipModel", () => {
     );
 
     // Assert
-    expect(screen.getByTestId("shipModel-group-test-id")).toHaveAttribute(
-      "scale",
+    expect(container.querySelector("group")?.getAttribute("scale")).toBe(
       "2,2,2",
     );
   });
