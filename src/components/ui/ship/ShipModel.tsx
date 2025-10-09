@@ -33,7 +33,7 @@ function ShipModel({ model, lowSize, mediumSize, highSize }: ShipModelProps) {
       ref={group}
       scale={[scale, scale, scale]}
       position={[0, -0.2, 0]}
-      rotation={[0.3, Math.PI, 0]}
+      rotation={[0.25, Math.PI, 0]}
     >
       <primitive object={scene} />
     </group>
