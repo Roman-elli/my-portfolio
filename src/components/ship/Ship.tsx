@@ -40,6 +40,7 @@ export default function Ship({ mode, isStart }: ShipProps) {
           }
           ${isStart ? "translate-y-[80vh]" : ""}
           `}
+        data-testid="airplane-test-id"
       >
         <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ alpha: true }}>
           <ambientLight intensity={1} />
@@ -61,7 +62,9 @@ export default function Ship({ mode, isStart }: ShipProps) {
                 ? "translate-y-[80vh] z-10"
                 : "translate-y-[15vh] translate-x-[10vw] scale-0 z-10"
           }
+          
           `}
+        data-testid="spaceship-test-id"
       >
         <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ alpha: true }}>
           <ambientLight intensity={0.3} />
