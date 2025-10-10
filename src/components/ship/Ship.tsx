@@ -32,18 +32,18 @@ export default function Ship({ mode, isStart }: ShipProps) {
   return (
     <div className="flex fixed inset-0 z-[50] justify-center items-center animate-ship">
       <div
-        className={`absolute w-full h-full transition-all duration-4000 ease-in-out
+        className={`absolute w-full h-full transition-all duration-7000 ease-in-out
           ${
             airplaneVisible
               ? "translate-y-[30vh] z-20"
-              : "translate-y-[10vh] translate-x-[-5vw] scale-0 z-10"
+              : "translate-y-[10vh] translate-x-[-7vw] scale-0 z-10"
           }
           ${isStart ? "translate-y-[80vh]" : ""}
           `}
         data-testid="airplane-test-id"
       >
         <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ alpha: true }}>
-          <ambientLight intensity={1} />
+          <ambientLight intensity={1.5} />
           <directionalLight position={[0, 0.6, -3]} intensity={5} />
           <ShipModel
             model="./airplane.glb"
@@ -54,13 +54,13 @@ export default function Ship({ mode, isStart }: ShipProps) {
         </Canvas>
       </div>
       <div
-        className={`absolute w-full h-full transition-all duration-4000 ease-in-out
+        className={`absolute w-full h-full transition-all duration-5000 ease-in-out
           ${
             spaceshipVisible
               ? "translate-y-[25vh] z-20"
               : spaceShipStart
                 ? "translate-y-[80vh] z-10"
-                : "translate-y-[15vh] translate-x-[10vw] scale-0 z-10"
+                : "translate-y-[10vh] translate-x-[3vw] scale-0 z-10"
           }
           
           `}
@@ -68,7 +68,7 @@ export default function Ship({ mode, isStart }: ShipProps) {
       >
         <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ alpha: true }}>
           <ambientLight intensity={0.3} />
-          <directionalLight position={[0, -0.6, -1]} intensity={0.6} />
+          <directionalLight position={[0, -0.6, -1]} intensity={1.5} />
           <ShipModel
             model="./spaceship.glb"
             lowSize={0.1}

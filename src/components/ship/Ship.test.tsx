@@ -52,7 +52,7 @@ describe("Ship component", () => {
 
     // Expect
     expect(screen.getByTestId("airplane-test-id")).toHaveClass(
-      "translate-y-[10vh] translate-x-[-5vw] scale-0 z-10",
+      "translate-y-[10vh] translate-x-[-7vw] scale-0 z-10",
     );
     expect(screen.getByTestId("spaceship-test-id")).toHaveClass(
       "translate-y-[25vh] z-20",
@@ -96,7 +96,7 @@ describe("Ship component", () => {
 
     // Assert
     expect(screen.getByTestId("spaceship-test-id")).toHaveClass(
-      "translate-y-[15vh] translate-x-[10vw] scale-0 z-10",
+      "translate-y-[10vh] translate-x-[3vw] scale-0 z-10",
     );
   });
 
