@@ -48,7 +48,7 @@ export default function Ship({ mode, isStart }: ShipProps) {
             airplaneVisible
               ? "translate-y-[30vh] z-20"
               : airplaneStart
-                ? "translate-y-[-30vh] translate-x-[-90vw] rotate-[60deg] transition-none z-10"
+                ? "translate-y-[30vh] translate-x-[-90vw] rotate-[60deg] transition-none z-10"
                 : "translate-y-[-10vh] translate-x-[-30vw] rotate-[-30deg] scale-0 z-10"
           }
           ${isStart ? "translate-y-[80vh] transition-none" : ""}
@@ -74,7 +74,7 @@ export default function Ship({ mode, isStart }: ShipProps) {
               ? "translate-y-[25vh] z-20"
               : spaceShipStart
                 ? "translate-y-[60vh] translate-x-[90vw] transition-none z-10"
-                : "translate-y-[-20vh] translate-x-[30vw] rotate-[45deg] scale-0 z-10"
+                : "translate-y-[-20vh] translate-x-[20vw] rotate-[55deg] scale-0 z-10"
           }
         `}
         data-testid="spaceship-test-id"

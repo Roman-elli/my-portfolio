@@ -59,7 +59,7 @@ describe("Ship component", () => {
       "translate-y-[25vh] z-20",
     );
     expect(screen.getByTestId("airplane-test-id")).toHaveClass(
-      "translate-y-[-30vh] translate-x-[-90vw] rotate-[60deg] transition-none z-10",
+      "translate-y-[30vh] translate-x-[-90vw] rotate-[60deg] transition-none z-10",
     );
   });
 
@@ -91,7 +91,7 @@ describe("Ship component", () => {
 
     // Assert
     expect(screen.getByTestId("airplane-test-id")).toHaveClass(
-      "translate-y-[-30vh] translate-x-[-90vw] rotate-[60deg] transition-none z-10",
+      "translate-y-[30vh] translate-x-[-90vw] rotate-[60deg] transition-none z-10",
     );
   });
 
@@ -144,7 +144,7 @@ describe("Ship component", () => {
 
     // Assert
     expect(screen.getByTestId("spaceship-test-id")).toHaveClass(
-      "translate-y-[-20vh] translate-x-[30vw] rotate-[45deg] scale-0 z-10",
+      "translate-y-[-20vh] translate-x-[20vw] rotate-[55deg] scale-0 z-10",
     );
   });
 });
