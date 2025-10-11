@@ -12,13 +12,20 @@ export default function Ship({ mode, isStart }: ShipProps) {
   const [airplaneVisible, setAirplaneVisible] = useState(mode === "light");
   const [spaceshipVisible, setSpaceshipVisible] = useState(mode === "dark");
   const [spaceShipStart, setSpaceShipStart] = useState<boolean>(true);
+  const [airplaneStart, setAirplaneStart] = useState<boolean>(true);
 
   useEffect(() => {
     if (mode === "light") {
       setSpaceshipVisible(false);
+
       setTimeout(() => {
         setAirplaneVisible(true);
+        setAirplaneStart(false);
       }, 2500);
+
+      setTimeout(() => {
+        setSpaceShipStart(true);
+      }, 5000);
     } else {
       setAirplaneVisible(false);
 
@@ -26,6 +33,10 @@ export default function Ship({ mode, isStart }: ShipProps) {
         setSpaceshipVisible(true);
         setSpaceShipStart(false);
       }, 2500);
+
+      setTimeout(() => {
+        setAirplaneStart(true);
+      }, 7000);
     }
   }, [mode]);
 
@@ -36,10 +47,12 @@ export default function Ship({ mode, isStart }: ShipProps) {
           ${
             airplaneVisible
               ? "translate-y-[30vh] z-20"
-              : "translate-y-[10vh] translate-x-[-7vw] scale-0 z-10"
+              : airplaneStart
+                ? "translate-y-[-30vh] translate-x-[-90vw] rotate-[60deg] transition-none z-10"
+                : "translate-y-[-10vh] translate-x-[-30vw] rotate-[-30deg] scale-0 z-10"
           }
-          ${isStart ? "translate-y-[80vh]" : ""}
-          `}
+          ${isStart ? "translate-y-[80vh] transition-none" : ""}
+        `}
         data-testid="airplane-test-id"
       >
         <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ alpha: true }}>
@@ -53,17 +66,17 @@ export default function Ship({ mode, isStart }: ShipProps) {
           />
         </Canvas>
       </div>
+
       <div
         className={`absolute w-full h-full transition-all duration-5000 ease-in-out
           ${
             spaceshipVisible
               ? "translate-y-[25vh] z-20"
               : spaceShipStart
-                ? "translate-y-[80vh] z-10"
-                : "translate-y-[10vh] translate-x-[3vw] scale-0 z-10"
+                ? "translate-y-[60vh] translate-x-[90vw] transition-none z-10"
+                : "translate-y-[-20vh] translate-x-[30vw] rotate-[45deg] scale-0 z-10"
           }
-          
-          `}
+        `}
         data-testid="spaceship-test-id"
       >
         <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ alpha: true }}>
