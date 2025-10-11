@@ -144,7 +144,7 @@ describe("Ship component", () => {
 
     // Assert
     expect(screen.getByTestId("spaceship-test-id")).toHaveClass(
-      "translate-y-[-20vh] translate-x-[20vw] rotate-[55deg] scale-0 z-10",
+      "translate-y-[-20vh] translate-x-[25vh] sm:translate-x-[35vh] md:translate-x-[50vh] rotate-[55deg] scale-0 z-10",
     );
   });
 });

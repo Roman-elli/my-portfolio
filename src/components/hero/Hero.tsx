@@ -6,7 +6,7 @@ type BackgroundProps = {
 
 function Hero({ mode, isStart }: BackgroundProps) {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-[100vh] gap-5 pt-[25vh]  sm:pt-[28vh] md:pt-[20vh] z-80 fixed">
+    <div className="flex flex-col items-center justify-center w-full h-[100vh] gap-5 pt-[25vh]  sm:pt-[28vh] md:pt-[20vh] z-85 fixed">
       <div className="flex flex-row gap-3 font-space items-baseline animate-scalePulse">
         <div
           className={`duration-5000 ease-linear text-shadow-lg text-balance text-[clamp(1.5rem,2vw,2rem)]
