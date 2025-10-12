@@ -9,7 +9,7 @@ interface CloudProps {
 
 const Clouds: React.FC<CloudProps> = ({ cloud, visible, back = false }) => {
   return (
-    <div className={`fixed ${cloud.pt} ${cloud.pl} ${cloud.animate}`}>
+    <div className={`absolute ${cloud.pt} ${cloud.pl} ${cloud.animate}`}>
       <img
         src={cloud.src}
         alt={back ? "Clouds back" : "Clouds"}

@@ -241,7 +241,7 @@ function Sky({ mode, isStart }: SkyProps) {
 
   return (
     <>
-      <div className="flex items-center justify-center w-full h-[100%] fixed pb-[15%] animate-scalePulse z-40">
+      <div className="absolute flex items-center justify-center w-full h-[100%] pb-[15%] animate-scalePulse z-40">
         <img
           src={Sun}
           alt="Bright yellow sun in the sky"
@@ -260,7 +260,7 @@ function Sky({ mode, isStart }: SkyProps) {
           data-testid="moon-id"
         />
       </div>
-      <div className="fixed z-50">
+      <div className="relative z-50">
         {back_clouds.map((cloud, i) => (
           <Clouds key={i} cloud={cloud} visible={sunVisible && !isStart} back />
         ))}
@@ -270,7 +270,7 @@ function Sky({ mode, isStart }: SkyProps) {
         ))}
       </div>
       <div
-        className={`fixed w-full h-full duration-2500 ease-in-out 
+        className={`absolute w-full h-full duration-2500 ease-in-out 
         ${moonVisible ? "opacity-90" : "opacity-0"}`}
         data-testid="night-sky-id"
       >
