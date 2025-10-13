@@ -38,23 +38,25 @@ function App() {
                 isStart={isStart}
             />
             <Contact mode={mode} isStart={isStart} isAnimating={isAnimating} />
-            <div className="sticky top-0 h-[100svh]">
+            <div className="absolute sticky z-10 top-0 h-[100svh]">
                 <div
-                    className={`relative w-full h-full 
-          `}
+                    className={`relative w-full h-full`}
                 >
-
                     <Sky mode={mode} isStart={isStart} />
                     <Hero mode={mode} isStart={isStart} />
 
                 </div>
             </div>
 
-            <section className="absolute top-[100svh] left-0 w-full h-[100svh] flex items-center justify-center rounded-t-4xl text-white text-4xl z-40">
+            <section className={`absolute z-30 top-[100svh] left-0 w-full h-[100svh] transition-colors duration-[5000ms] flex items-center justify-center rounded-t-4xl text-white text-4xl
+            ${mode === "light" ? "bg-red-800" : "bg-transparent"}
+            `}>
                 about me
             </section>
 
-            <section className="absolute top-[200svh] left-0 w-full h-[100svh] flex items-center justify-center text-white text-4xl z-40">
+            <section className={`absolute top-[200svh] left-0 w-full h-[100svh] flex items-center justify-center  transition-colors duration-[5000ms] text-white text-4xl z-40
+            ${mode === "light" ? "bg-red-800" : "bg-transparent"}
+            `}>
                 projects
             </section>
 
