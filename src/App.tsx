@@ -38,7 +38,7 @@ function App() {
                 isStart={isStart}
             />
             <Contact mode={mode} isStart={isStart} isAnimating={isAnimating} />
-            <div className="absolute sticky z-10 top-0 h-[100svh]">
+            <div className="sticky z-10 top-0 h-[100svh]">
                 <div
                     className={`relative w-full h-full`}
                 >
